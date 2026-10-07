@@ -75,6 +75,8 @@ Tracked in `SaveData` / `UnlockManager` (`GODOT_ARCHITECTURE.md`).
 
 Unlocked moves/characters feed back into both halves — a new character has its own `CharacterData` moveset and movement profile, deepening replay (`REPLAYABILITY.md`).
 
+> **Demo vs. roster:** the demo ships a **single, non-unlockable** starting character used in both halves (`GAME_DESIGN.md` §4). "Characters" as an unlock type above is the **planned post-demo extension**, not demo scope.
+
 ## 6. Difficulty & Accessibility Progression
 
 - **No forced difficulty select** — the three routes *are* the difficulty, chosen live (Pillar 3).
@@ -95,7 +97,9 @@ Rough intended arc (not POC scope):
 
 ## 9. Open Questions
 
-- Exact HP scaling curve by rank (how much does S vs D actually swing?). Needs playtest to stay "meaningful but not deterministic."
-- Should the Last-Chance Challenge cost anything (e.g., caps your rank at C)? (Leaning: yes — it gets you *in*, but not a good loadout.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-PROG-02] Exact HP scaling curve by rank (how much does S vs D actually swing?). Needs playtest to stay "meaningful but not deterministic."
+- ❓ OPEN QUESTION [Q-PROG-01] Should the Last-Chance Challenge cost anything (e.g., cap rank at C)? (Leaning: yes — it gets you *in*, but not a good loadout.)
 - Do assists disable unlocks entirely or just leaderboard entries? (Leaning: unlocks still work; leaderboards flagged "assisted.")
-- How many unlockable characters for v1 vs. post-launch? (Scope; POC = single character + Volt.)
+- How many unlockable characters for v1 vs. post-launch? (Scope; demo = single character + Volt. Roster is a planned extension — `GAME_DESIGN.md` §4.)

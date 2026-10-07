@@ -129,7 +129,9 @@ The player should *feel* their run the instant the fight begins — the loadout 
 
 ## 11. Open Questions
 
-- Single health bar vs. 2-round match? (Leaning: single round for pace; revisit if fights feel too swingy.)
-- Does the player use the *same* runner character in the fight, or a combat persona? (Leaning: same character, reinforcing the two-fantasies-one-character identity in `GAME_DESIGN.md`.)
-- Is dodge stamina worth the added complexity? (Playtest.)
-- How hard should the boss AI read/punish? Must stay "readable," never "oppressive."
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-FIGHT-02] Single decisive round vs. 2-round match? (Leaning: single round for pace; revisit if fights feel too swingy.)
+- ~~Does the player use the same runner character in the fight, or a combat persona?~~ **Resolved:** the **same character** fights the boss, reinforcing the two-fantasies-one-character identity (`GAME_DESIGN.md` §4). The demo has one such character; a future roster is a planned extension (each character's `CharacterData` holds both its movement profile and its moveset — `DATA_MODEL.md`).
+- ❓ OPEN QUESTION [Q-FIGHT-03] Is dodge stamina worth the added complexity? (Playtest.)
+- ❓ OPEN QUESTION [Q-FIGHT-04] How hard should the boss AI read/punish? Must stay "readable," never "oppressive."

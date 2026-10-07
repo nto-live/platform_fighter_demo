@@ -85,6 +85,8 @@ For players who exhaust the base mastery curve:
 
 ## 11. Open Questions
 
-- Ghosts: per-route ghosts, or just overall-best? (Leaning: overall best + optional friend ghosts.)
-- Do we surface a per-level "completion %" (routes seen, secrets, feats) to drive 100%-ing? (Leaning: yes, strong completionist hook.)
-- Weekly challenges: in-scope for v1 or post-launch? (Post-launch.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-REPLAY-01] Ghosts: per-route, or just overall-best? (Leaning: overall best + optional friend ghosts.)
+- ❓ OPEN QUESTION [Q-REPLAY-02] Surface a per-level "completion %" (routes seen, secrets, feats)? (Leaning: yes, strong completionist hook.)
+- ❓ OPEN QUESTION [Q-REPLAY-03] Weekly challenges: in-scope for v1 or post-launch? (Leaning: post-launch.)

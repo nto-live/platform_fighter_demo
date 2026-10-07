@@ -146,3 +146,9 @@ An expert HIGH-route run on the same level might hit ~30,000+ (S rank) via a sus
 ## 11. Data-Driven Hook
 
 All of the above is tuned via **`ScoreRuleData`** Resources (per difficulty / per level overrides) — see `DATA_MODEL.md`. Point values, multiplier growth/decay curves, bonus weights, and rank thresholds are data, not code, so balance can iterate without engineering.
+
+## 12. Open Questions
+
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-BAL-01] The score spread is currently shown with only one worked example (a mid-skill B run, §9). Before implementation, add a worked **LOW-run** and **S-run** example with placeholder numbers to *prove* that a clean low run clears the minimum gate while S demands the high route. (Draft when numbers firm up.)

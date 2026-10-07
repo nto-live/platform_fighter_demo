@@ -246,7 +246,9 @@ These five are the make-or-break of the concept and should be the POC's focus (s
 
 ## 9. Open Questions (this level)
 
-- Is one major shortcut enough, or does the HIGH route need a second to feel rewarding? (Playtest.)
-- Does the Overcharge-carry risk (lose on death) read as exciting or punishing here? (Playtest.)
-- Are 2 junctions enough to make banking/pace-feedback land, or do we need 3? (Leaning: 2 for POC length targets.)
-- Switch-sequence rhythm in Seg 3 mirroring Volt — too subtle, or just right? (Playtest the "covert practice" hypothesis.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-POC-01] Is one major shortcut enough, or does the HIGH route need a second to feel rewarding? (Playtest.)
+- ❓ OPEN QUESTION [Q-POC-02] Does the Overcharge-carry risk (lose on death) read as exciting or punishing here? (Playtest.)
+- ❓ OPEN QUESTION [Q-POC-03] Are 2 junctions enough to make banking/pace-feedback land, or do we need 3? (Leaning: 2 for demo length targets.)
+- ❓ OPEN QUESTION [Q-POC-04] Switch-sequence rhythm in Seg 3 mirroring Volt — too subtle, or just right? (Playtest the "covert practice" hypothesis.)

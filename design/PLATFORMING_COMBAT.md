@@ -90,6 +90,8 @@ Behavior comes from the archetype + pattern, consumed by a generic enemy scene �
 
 ## 10. Open Questions
 
-- Do any enemies drop collectibles/power-ups on defeat, or is loot purely placed? (Leaning: a few archetypes drop a collectible to reward engagement; most loot is placed.)
-- Should a bounce chain have a visible on-screen counter (like the multiplier) to encourage it? (Leaning: yes, subtle.)
-- Are turrets/lobbers ever defeatable (e.g., reflect a projectile), or strictly avoid-only? (Leaning: strictly avoid in POC; revisit reflect for a reflect-themed boss level.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-PCMB-01] Do any enemies drop collectibles/power-ups on defeat, or is loot purely placed? (Leaning: a few archetypes drop; most placed.)
+- ❓ OPEN QUESTION Should a bounce chain have a visible on-screen counter (like the multiplier) to encourage it? (Leaning: yes, subtle.)
+- ❓ OPEN QUESTION [Q-PCMB-02] Are turrets/lobbers ever defeatable (reflect), or strictly avoid-only? (Leaning: avoid-only in demo; revisit for a reflect-themed boss.)

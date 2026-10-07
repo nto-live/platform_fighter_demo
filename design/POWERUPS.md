@@ -106,6 +106,8 @@ Every power-up is a **`PowerUpData`** Resource: id, display name, icon, pickup/a
 
 ## 9. Open Questions
 
-- ~~Should Score Multiplier power-ups multiply base points or the whole product?~~ **Resolved (I3):** base points only, applied before the live multiplier, to avoid runaway scores (`SCORING_SYSTEM.md` §2). Exact magnitudes still to tune.
-- How many forced-choice pedestals per level before it feels gimmicky? (Leaning: 2–3, usually at junctions.)
-- Does Overcharge risk (lose it on death) feel exciting or punishing? Needs playtest.
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ~~Should Score Multiplier power-ups multiply base points or the whole product?~~ **Resolved [Q-PUP-01]:** base points only, applied before the live multiplier (`SCORING_SYSTEM.md` §2). Exact magnitudes still to tune [Q-PUP-04].
+- ❓ OPEN QUESTION [Q-PUP-02] How many forced-choice pedestals per level before it feels gimmicky? (Leaning: 2–3, usually at junctions.)
+- ❓ OPEN QUESTION [Q-PUP-03] Does Overcharge risk (lose it on death) feel exciting or punishing? Needs playtest.

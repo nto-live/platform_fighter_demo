@@ -104,6 +104,8 @@ Hazards are **`HazardData`** Resources: id, consequence class enum, damage amoun
 
 ## 11. Open Questions
 
-- Exact health pool size (3 pips vs 1-hit-with-shields "Meat Boy" purity). Leaning 3 to support the Health Bonus and soft-hazard texture, but the HIGH route may *feel* 1-hit due to lethal hazard density.
-- Should multiplier reset on *every* hit, or only on shield-break/knockdown? (Leaning: soft DAMAGE = partial dip, knockdown/death = reset. Combo Keeper covers one reset.)
-- Respawn resource restoration curve — needs playtest to avoid both "too punishing" and "no stakes."
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`** to find open items.
+
+- ❓ OPEN QUESTION [Q-HEALTH-01] 🔴 **(awaiting user)** Exact health pool size: 3 pips vs. 1-hit-with-shields "Meat Boy" purity. Leaning 3 to support the Health Bonus and soft-hazard texture, but the HIGH route may *feel* 1-hit due to lethal hazard density.
+- ~~Should multiplier reset on *every* hit, or only on shield-break/knockdown?~~ **Resolved [Q-DMG-01]:** per-hazard `multiplier_effect` is authoritative — soft DAMAGE = partial dip, knockdown/death = reset; Combo Keeper covers one reset.
+- ❓ OPEN QUESTION [Q-DMG-02] Respawn resource restoration curve — needs playtest to avoid both "too punishing" and "no stakes."

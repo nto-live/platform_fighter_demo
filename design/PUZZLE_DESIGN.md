@@ -120,6 +120,8 @@ Puzzle elements (switches, timed doors, redirectable platforms, destructibles) a
 
 ## 9. Open Questions
 
-- How much *explicit* signposting (arrows, color language) vs. pure environmental read? Leaning: strong consistent color language, minimal arrows.
-- Should solved route-change mechanisms persist across death-retry within a segment? (Leaning: yes, to avoid re-solving on every retry — only reset on segment restart.)
-- Do we need a "puzzle discovered/solved" scoring popup, or does the resulting route/score speak for itself? (Leaning: subtle popup for secrets only.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-PUZ-02] How much *explicit* signposting (arrows) vs. pure environmental read? (Leaning: strong consistent color language, minimal arrows.)
+- ❓ OPEN QUESTION [Q-PUZ-01] Should solved route-change mechanisms persist across death-retry within a segment? (Leaning: yes; reset only on segment restart.)
+- ❓ OPEN QUESTION [Q-PUZ-03] Do we need a "puzzle solved" scoring popup, or does the route/score speak for itself? (Leaning: subtle popup for secrets only.)

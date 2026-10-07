@@ -85,6 +85,8 @@ These exist to give the eventual implementation a starting point and to let us r
 
 **Forgiveness features (coyote time, jump buffer, generous hitbox-vs-visual) are mandatory** — they're what make precision feel fair instead of cheap, straight out of the Super Meat Boy playbook.
 
+> **These targets are a per-character "movement profile" (future hook).** All values in this table belong to the character, authored on `CharacterData` (`DATA_MODEL.md`), not hard-coded into the MovementController. The demo has one profile. A future roster (`GAME_DESIGN.md` §4) can ship characters that feel distinctly different — e.g. a flowier high-top-speed character vs. a tighter, dash-heavy one — purely by swapping this profile. The MovementController reads the active character's profile; it never assumes a single global tuning.
+
 ## 6. Movement State Machine (conceptual)
 
 Implemented as the **Platforming State Machine** in `GODOT_ARCHITECTURE.md`. States, not code:
@@ -120,6 +122,9 @@ A missed high-route momentum jump doesn't kill — it drops you (Pillar 1). The 
 
 ## 8. Open Movement Questions (for later)
 
-- Should dash charges be shared with the fight, or is dash purely a platforming verb? (Leaning: platforming-only; fight has its own dodge.)
-- Does boosted speed persist through a spring, or does the spring overwrite it with a fixed launch? (Leaning: spring sets a floor, doesn't cap — so arriving fast still helps.)
-- Grind-rail control model: auto-speed vs. player-modulated? (Leaning: player can lean forward/back to modulate within a band.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register (stable IDs, priorities). Grep **`❓ OPEN QUESTION`** to find open items.
+
+- ❓ OPEN QUESTION [Q-FEEL-01] 🔴 **(awaiting user)** Where on the Sonic-fast ↔ Meat-Boy-precise slider does movement sit? This drives acceleration, air control, boost decay, and how punishing the high route is. Current docs lean *middle* ("grounded precision with a momentum layer").
+- ❓ OPEN QUESTION [Q-MOVE-01] Should dash charges be shared with the fight, or is dash purely a platforming verb? (Leaning: platforming-only; fight has its own dodge.)
+- ❓ OPEN QUESTION [Q-MOVE-02] Does boosted speed persist through a spring, or does the spring overwrite it with a fixed launch? (Leaning: spring sets a floor, doesn't cap — so arriving fast still helps.)
+- ❓ OPEN QUESTION [Q-MOVE-03] Grind-rail control model: auto-speed vs. player-modulated? (Leaning: player can lean forward/back to modulate within a band.)

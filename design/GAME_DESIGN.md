@@ -48,6 +48,15 @@ Two fantasies, one character:
 
 The transition between them is the emotional climax of each level.
 
+### Character model (decision + future hook)
+**Decision:** the demo ships a **single playable character, used across both halves** (same character runs the stage and fights the boss). This keeps the runner/duelist identity unified and the scope tight.
+
+> **Future extension — multiple characters with distinct movesets.** The architecture must *not* assume there is only one character. A later roster is an explicit, planned extension point:
+> - Each character is a `CharacterData` Resource (`DATA_MODEL.md`) carrying **both** its platforming **movement profile** (speed, jump, dash tuning — `MOVEMENT_SYSTEM.md`) **and** its combat **moveset** (`MoveData` lists — `FIGHTING_SYSTEM.md`). One Resource spans both halves, preserving "two fantasies, one character" per character.
+> - Characters are already listed as an unlock type in `PROGRESSION.md`; a new character = new data + animations, **no system rewrite** (`DATA_MODEL.md` authoring flow).
+> - Different characters may lean the feel slider differently (one flowier, one tighter) and favor different routes/bosses — a strong replay and expression driver (`REPLAYABILITY.md`).
+> - **Out of demo scope**, but all of the above is why `CharacterData` exists now rather than hard-coding the one character.
+
 ## 5. Target Experience by Skill Tier
 
 | Tier | Platforming behavior | Typical rank | Boss experience |
@@ -67,7 +76,7 @@ The game must be **winnable and fun at the bottom tier** and **deep and expressi
 ## 7. Platform & Tech Assumptions
 
 - **Engine:** Godot 4.x (2D). All system designs assume Godot's scene/node/Resource model and the signal bus pattern. See `GODOT_ARCHITECTURE.md`.
-- **Perspective:** 2D side-on, pixel or clean-vector art (undecided; not a design-phase blocker).
+- **Perspective:** 2D side-on. ❓ OPEN QUESTION [Q-ART-01] 🔴 **(awaiting user)** pixel art vs. clean vector — undecided; affects tooling, animation pipeline, and hazard readability (Pillar 4). Not a design-phase blocker. See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md).
 - **Input:** Gamepad-first, full keyboard support. Fighting controls are deliberately low-execution (no motion inputs required; see `FIGHTING_SYSTEM.md`).
 - **Framerate target:** 60 FPS fixed-step for deterministic physics and fighting-game feel.
 

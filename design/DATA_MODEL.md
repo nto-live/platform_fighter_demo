@@ -33,20 +33,25 @@ Resources are Godot's native serialized data objects (editable in the Inspector,
 Indicative fields; `[Res]` denotes a reference to another Resource; `[ ]` a typed array.
 
 ### CharacterData
+> **This is the roster extension point** (`GAME_DESIGN.md` §4). One `CharacterData` fully defines a character across **both** halves: its platforming **movement profile** *and* its combat **moveset**. The demo authors exactly one; a future roster adds more as pure data (+ animations) with no system rewrite. Systems (MovementController, Combat State Machine) always read the *active* character's `CharacterData` — they never assume a single global character.
+
 ```
 id : StringName
 display_name : String
 sprite_frames / anim_tree_ref
+# --- platforming movement profile (MOVEMENT_SYSTEM.md §5) ---
 base_move_speed : float          # the "1.0 v" reference
 boosted_ceiling_mult : float
 jump_profile : {tap_h, full_h, coyote, buffer}
 dash : {charges, distance, refund_on_land}
 platforming_health : int         # pip pool for the stage (target 3); see DAMAGE_AND_CHECKPOINTS.md
+# --- combat moveset (FIGHTING_SYSTEM.md) ---
 combat_health : int              # single-bar max for the duel; rank sets starting fill (PROGRESSION.md §4)
 move_set : [Res MoveData]
 special_moves : [Res MoveData]
 super_move : Res MoveData
-unlockable : bool
+# --- meta ---
+unlockable : bool                # false for the demo's starting character; true for future roster unlocks
 ```
 
 ### MoveData
@@ -211,6 +216,8 @@ SaveData persists records/unlocks across runs
 
 ## 7. Open Questions
 
-- Should `rank_thresholds` live on `LevelData` or `ScoreRuleData`? (Leaning: default in ScoreRuleData, optional per-level override on LevelData.)
-- Represent `SegmentData` as real Resources, or keep segments purely as scene structure? (Leaning: optional lightweight Resource to aid tooling/analytics; not required for a level to function.)
-- `AiProfileData` as its own Resource vs. inline on `BossData`? (Leaning: separate, so profiles are reusable across bosses and rematches.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-DATA-01] Should `rank_thresholds` live on `LevelData` or `ScoreRuleData`? (Leaning: default in ScoreRuleData, optional per-level override on LevelData.)
+- ❓ OPEN QUESTION [Q-DATA-02] Represent `SegmentData` as real Resources, or keep segments purely as scene structure? (Leaning: optional lightweight Resource; not required for a level to function.)
+- ❓ OPEN QUESTION [Q-DATA-03] `AiProfileData` as its own Resource vs. inline on `BossData`? (Leaning: separate, reusable across bosses and rematches.)

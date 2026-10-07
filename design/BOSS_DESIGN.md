@@ -101,6 +101,8 @@ Tied to the proof-of-concept level (`PROOF_OF_CONCEPT_LEVEL.md`).
 
 ## 9. Open Questions
 
-- Do bosses ever have a short **platforming-flavored phase** inside the arena (e.g., Volt forces you to wall-jump off arena walls), or is the fight purely a fighter? (Leaning: keep the fight a pure duel for clarity; express the level's theme through *moves*, not by re-introducing platforming.)
-- How many bosses for v1? (Scope question — the POC needs exactly one: Volt.)
-- Should the boss comment on *how* the player beat the stage (route taken), for personality? (Nice-to-have; cheap via a few voice lines keyed to route-tier.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-BOSS-01] Do bosses ever have a short **platforming-flavored phase** inside the arena, or is the fight purely a fighter? (Leaning: pure duel; express the level's theme through *moves*.)
+- How many bosses for v1? (Scope — the demo needs exactly one: Volt.)
+- ❓ OPEN QUESTION [Q-BOSS-02] Should the boss comment on *how* the player beat the stage (route taken)? (Nice-to-have voice lines keyed to route-tier.)

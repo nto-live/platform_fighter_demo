@@ -44,8 +44,9 @@ Start at the top for vision, then drill into systems.
 ### The Example Level
 18. [PROOF_OF_CONCEPT_LEVEL.md](PROOF_OF_CONCEPT_LEVEL.md) — "Voltline Rush," one full level section-by-section, ending in a duel vs. VOLT
 
-### Review
+### Review & Tracking
 - [DESIGN_ANALYSIS.md](DESIGN_ANALYSIS.md) — internal review: strengths, gaps, resolved inconsistencies, ranked risks
+- [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) — master register of every unresolved question (stable IDs, priorities). Grep **`❓ OPEN QUESTION`** across the docs to jump to any open item.
 
 ## Design Pillars (quick reference)
 

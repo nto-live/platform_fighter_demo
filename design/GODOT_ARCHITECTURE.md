@@ -176,7 +176,9 @@ Finish trigger
 
 ## 13. Open Architecture Questions
 
-- EventBus signals vs. a lightweight message/queue for ordering guarantees on the same frame? (Leaning: signals + careful emit ordering; revisit if race issues appear.)
-- Should RouteManager infer tier purely from volumes, or also from player altitude as a fallback? (Leaning: volumes authoritative, altitude as a sanity check.)
-- Shared MovementController across modes, or a separate combat mover? (Leaning: shared body, different tuning profiles; re-evaluate if combat needs diverge.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-ARCH-01] EventBus signals vs. a lightweight message/queue for ordering guarantees on the same frame? (Leaning: signals + careful emit ordering.)
+- ❓ OPEN QUESTION [Q-ARCH-02] Should RouteManager infer tier purely from volumes, or also from player altitude as a fallback? (Leaning: volumes authoritative, altitude as a sanity check.)
+- ❓ OPEN QUESTION [Q-ARCH-03] Shared MovementController across modes, or a separate combat mover? (Leaning: shared body, different tuning profiles.)
 - Scene streaming for very large levels vs. single-scene load? (Defer; POC levels fit in one scene.)

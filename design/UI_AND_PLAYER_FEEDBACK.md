@@ -128,6 +128,8 @@ Driven by AudioManager (`GODOT_ARCHITECTURE.md`):
 
 ## 12. Open Questions
 
-- Is a pace-projection marker helpful or anxiety-inducing? (Playtest; make it optional.)
-- How minimal can the platforming HUD get before readability suffers? (Leaning: allow a "clean HUD" toggle for veterans.)
-- Should floating popups be togglable for speedrunners who find them noisy? (Leaning: yes.)
+> See [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) for the master register. Grep **`❓ OPEN QUESTION`**.
+
+- ❓ OPEN QUESTION [Q-UI-01] Is a pace-projection marker helpful or anxiety-inducing? (Playtest; make it optional.)
+- ❓ OPEN QUESTION [Q-UI-02] How minimal can the platforming HUD get before readability suffers? (Leaning: a "clean HUD" toggle for veterans.)
+- ❓ OPEN QUESTION [Q-UI-03] Should floating popups be togglable for speedrunners who find them noisy? (Leaning: yes.)
