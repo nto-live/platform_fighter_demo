@@ -31,7 +31,7 @@ Design rules:
 ### Scoring
 | Power-up | Effect | Carries to fight? |
 | --- | --- | --- |
-| **Score Multiplier (2×/3×)** | Multiplies all scoring for a duration (stacks on top of live multiplier) | Indirectly (higher score → better loadout) |
+| **Score Multiplier (2×/3×)** | Multiplies **base points only** for a duration, *before* the live multiplier applies (see §9) | Indirectly (higher score → better loadout) |
 | **Magnet** | Pulls nearby collectibles toward the player | No |
 | **Combo Keeper** | Prevents the next multiplier reset (one-shot buffer) | No |
 
@@ -106,6 +106,6 @@ Every power-up is a **`PowerUpData`** Resource: id, display name, icon, pickup/a
 
 ## 9. Open Questions
 
-- Should Score Multiplier power-ups multiply *base points* only, or the whole `base × live-multiplier` product? (Leaning: base only, to avoid runaway scores — tune later.)
+- ~~Should Score Multiplier power-ups multiply base points or the whole product?~~ **Resolved (I3):** base points only, applied before the live multiplier, to avoid runaway scores (`SCORING_SYSTEM.md` §2). Exact magnitudes still to tune.
 - How many forced-choice pedestals per level before it feels gimmicky? (Leaning: 2–3, usually at junctions.)
 - Does Overcharge risk (lose it on death) feel exciting or punishing? Needs playtest.

@@ -25,6 +25,14 @@ RUN SCORE  =  BASE POINTS  ×  LIVE MULTIPLIER   (+ end-of-stage bonuses)
 
 > The player learns one sentence: **"Grab stuff, keep your multiplier high, finish fast and clean."** Everything else is detail they can discover.
 
+**Ordering of the two multipliers (I3):** a **Score Multiplier power-up** (`POWERUPS.md`) multiplies **base points only**, *before* the live multiplier is applied. So the full per-event score is:
+
+```
+event score = base × powerup_mult(if active) × LIVE MULTIPLIER
+```
+
+The power-up boosts the raw value of what you touch; the live multiplier (your flow) then scales that. This keeps the live multiplier as the dominant, skill-driven term and prevents a stacked product from spiralling.
+
 ## 3. Base Point Sources
 
 | Source | Base value intent | Route scaling |
@@ -55,8 +63,15 @@ Think of it as a **flow meter**: staying fast, clean, and high keeps it rising.
 ### How it decays / resets
 - **Decays** gradually when the player is slow or idle (standing still bleeds multiplier — reinforces Pillar 2).
 - **Partial drop** on a non-lethal mistake (a drop to a lower route): you keep *some* multiplier, so recovery runs still score.
-- **Hard reset** on taking damage that breaks the flow (configurable per hazard) or on death-retry at a checkpoint.
+- **Hard reset** on a flow-breaking event or on death-retry at a checkpoint.
 - **Combo Keeper** power-up prevents one reset (see `POWERUPS.md`).
+
+> **The reset rule is per-hazard, not global (see I2 in `DESIGN_ANALYSIS.md`).** Whether a given hit *dips* or *resets* the multiplier is authored on each hazard/enemy via `HazardData.multiplier_effect` (`NONE | PARTIAL_DROP | RESET`) — see `DAMAGE_AND_CHECKPOINTS.md`. The intended defaults:
+> - **Soft DAMAGE** → `PARTIAL_DROP` (a dip, not a wipe).
+> - **Knockdown / KNOCK-TO-ROUTE** → `RESET` (or a large drop).
+> - **Death-retry** → `RESET`, always.
+>
+> There is no separate global "reset on any damage" switch; `HazardData.multiplier_effect` is the single source of truth, which is why `ScoreRuleData` no longer carries a `reset_on_damage` boolean.
 
 ### Why this design
 It ties the multiplier to the two things we most want to reward — **speed and the high route** — without a hidden formula. The player *sees* the number climb when they do well and dip when they don't. The route choice feeds it naturally: HIGH route has more multiplier fuel and demands the speed that keeps it high.
@@ -124,7 +139,7 @@ An expert HIGH-route run on the same level might hit ~30,000+ (S rank) via a sus
 
 ## 10. Anti-Exploit Notes (for later tuning)
 
-- **Multiplier farming:** cap how long the multiplier can be sustained while idle-farming a respawning enemy (decay-on-slow handles most of this).
+- **Multiplier farming:** cap how long the multiplier can be sustained while idle-farming a respawning enemy (decay-on-slow handles most of this). Note enemies are defeated by movement, not a farmable attack (`PLATFORMING_COMBAT.md`), which limits this further.
 - **Backtracking:** collectibles are one-time per run; no re-grabbing.
 - **Degenerate safe loops:** route-difficulty bonus and time par discourage camping a safe spot to pad score.
 

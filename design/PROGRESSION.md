@@ -54,7 +54,7 @@ The core of Pillar 5. Built into a `LoadoutPayload` at the handoff (`CORE_GAMEPL
 | **Higher rank / score** | More starting health (scaled by rank: S = full+, D = reduced) |
 | **Shields held at finish** | **Armor points** (each absorbs a hit's knockback/chip) |
 | **Special collectibles / Overcharge carried** | **Super meter pre-fill** |
-| **High-route clear** (held HIGH through a segment) | Unlocks a **bonus attack / EX option** for this fight |
+| **High-route clear** (per segment; defined in `THREE_PATH_LEVEL_DESIGN.md` §11) | Unlocks a **bonus attack / EX option** for this fight — one per high-cleared segment, capped at 2 |
 | **Secrets found** | Unlock **alternate move(s)** for this fight |
 | **Fast completion (beat par)** | **First-strike / approach-speed** edge at round start |
 | **Poor score (D / below)** | **Boss advantage** (`disadvantage_scaling`: more HP / faster / extra armor) |

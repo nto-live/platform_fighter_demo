@@ -36,17 +36,21 @@ A fighting-focused control set that reuses the platformer's muscle memory where 
 Depth without execution comes from a clean rock-paper-scissors core:
 
 ```
-         ATTACK
-        /      \
-   beats        loses to
-      /            \
-  GRAB  ◄── beats ── BLOCK
+          ATTACK
+         /      \
+    beats        loses to
+       /            \
+   GRAB  ◄── beats ── BLOCK
+
+   DODGE ─ sits OUTSIDE the triangle (not part of the RPS)
 ```
 
+The rock-paper-scissors core is **three** options — Attack, Grab, Block:
 - **Attack** beats **Grab** (hit them before they grab).
 - **Grab** beats **Block** (throw a turtling opponent).
 - **Block** beats **Attack** (absorb/reduce incoming).
-- **Dodge** sidesteps the triangle for a cost (limited, i-frames, whiff-punishable).
+
+**Dodge is a fourth, separate option — not a corner of the triangle.** It sidesteps the whole RPS for a cost: limited uses, i-frames on a short window, and heavily whiff-punishable if read. Think of it as an "escape" button that beats everything *if timed right* and loses hard if timed wrong.
 
 Every exchange is a legible mind-game on top of spacing. A new player understands it in one sentence; an expert plays the yomi.
 
@@ -62,7 +66,9 @@ The intent: *everyone* can do a cool-looking combo; experts optimize routing and
 ## 5. Resources
 
 ### Health
-- A single health bar per fighter (classic FG). Platforming performance adjusts the **player's** starting health (`PROGRESSION.md`).
+- A single continuous health bar per fighter (classic FG). This is a **different model** from the platforming 3-pip pool (`DAMAGE_AND_CHECKPOINTS.md`); the two do not carry over directly (see I1 in `DESIGN_ANALYSIS.md`).
+- The bridge is the loadout: **rank sets the player's starting fill** of this bar (S = full+, D = reduced), and **remaining platforming health** already paid out as the score Health Bonus (`PROGRESSION.md` §4). Platforming health is *not* copied onto this bar; it influences it only through rank/score.
+- Backed by `CharacterData.combat_health` (distinct from `platforming_health`) in `DATA_MODEL.md`.
 
 ### Super Meter
 - Builds by dealing/taking damage and by landing specials.
@@ -93,7 +99,7 @@ Summarized here; full mapping in `PROGRESSION.md`.
 | High score / rank | More starting health |
 | Shields held | Armor points |
 | Special collectibles | Pre-filled / larger super meter |
-| High-route clear | Unlocks a **bonus attack** or EX option |
+| High-route clear (per segment; see `THREE_PATH_LEVEL_DESIGN.md` §11) | Unlocks a **bonus attack** or EX option (capped) |
 | Secrets found | Unlock **alternate moves** |
 | Fast completion | **First-strike / approach-speed** edge at round start |
 | Poor score | Boss gets an advantage (more health / faster / extra armor) |
@@ -102,7 +108,7 @@ The player should *feel* their run the instant the fight begins — the loadout 
 
 ## 8. Round Structure
 
-- **Single round or best-of-1 with a comeback mechanic**, to keep fights short and climactic. (Leaning: single decisive round; the "comeback" is the Super meter.)
+- **A single decisive round** (not best-of-three), to keep fights short and climactic. The built-in "comeback" is the Super meter, which fills faster when you're losing.
 - A disadvantaged (low-score) player can still win with good defense and reads — the loadout tilts odds, it doesn't predetermine the result.
 - **Fight retry** keeps the loadout (`CORE_GAMEPLAY_LOOP.md`), so losing the fight doesn't force a stage re-run.
 

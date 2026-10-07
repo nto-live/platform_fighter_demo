@@ -21,6 +21,7 @@ Resources are Godot's native serialized data objects (editable in the Inspector,
 | `LevelData` | Level scene, managers | Per-level config: par, thresholds, boss ref, theme |
 | `PowerUpData` | PowerUpManager, pickups | One power-up's effect/visuals/rules |
 | `HazardData` | Hazard scenes | One hazard's consequence/visuals |
+| `EnemyData` | Enemy scenes | A platforming enemy's archetype, vulnerability, threat (`PLATFORMING_COMBAT.md`) |
 | `ScoreRuleData` | ScoreManager | Scoring values, multiplier curves, rank thresholds |
 | `DifficultyData` | multiple | Global difficulty profile / assist settings |
 | `CheckpointData` | CheckpointManager | (lightweight) per-checkpoint flags |
@@ -40,7 +41,8 @@ base_move_speed : float          # the "1.0 v" reference
 boosted_ceiling_mult : float
 jump_profile : {tap_h, full_h, coyote, buffer}
 dash : {charges, distance, refund_on_land}
-combat_health : int
+platforming_health : int         # pip pool for the stage (target 3); see DAMAGE_AND_CHECKPOINTS.md
+combat_health : int              # single-bar max for the duel; rank sets starting fill (PROGRESSION.md §4)
 move_set : [Res MoveData]
 special_moves : [Res MoveData]
 super_move : Res MoveData
@@ -134,7 +136,9 @@ telegraph_vfx/sfx
 ```
 id
 base_values : { collectible_common, collectible_premium, enemy, puzzle, secret, near_miss }
-multiplier : { growth_per_event, decay_per_sec_idle, drop_on_route_fall, reset_on_damage:bool, cap }
+multiplier : { growth_per_event, decay_per_sec_idle, drop_on_route_fall, partial_drop_amount, cap }
+            # NOTE: whether a hit dips vs. resets the multiplier is authored per-hazard via
+            # HazardData.multiplier_effect, NOT a global boolean here (see I2 in DESIGN_ANALYSIS.md).
 end_bonuses : { time_weight, health_weight, shield_weight, route_difficulty_weight,
                 no_hit_bonus, no_death_bonus, collection_weight, secret_weight, style_weight }
 rank_thresholds : {D,C,B,A,S : int}

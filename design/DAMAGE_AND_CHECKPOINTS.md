@@ -15,6 +15,12 @@ Two distinct "bad outcomes" exist and must never be confused by the player:
 ## 2. Player Condition Model
 
 - **Health:** a small pool (target: 3 "pips"). Health is for *soft* hazards and the end-of-stage Health Bonus. Running out of health does **not** instantly end the run — it causes a knock-down/drop and multiplier reset (configurable), except where a hazard is explicitly lethal.
+
+> **Two health models, one character (see I1 in `DESIGN_ANALYSIS.md`).** The game uses **two deliberately different** health representations because the two modes have different needs:
+> - **Platforming:** a 3-pip pool (this doc). Pips absorb soft hazards; most real danger is lethal hazards (instant retry) or drops (route demotion), not pip attrition.
+> - **Fighting:** a single continuous health bar (`FIGHTING_SYSTEM.md`), standard for a duel.
+>
+> They are **not** the same number and do not carry over directly. The bridge is the loadout: **remaining platforming health → the Health Bonus (score)** and **rank → the combat bar's starting fill** (`PROGRESSION.md` §4). Shields are the one resource that crosses modes directly (held shields → combat armor). The data split lives in `CharacterData` as separate `platforming_health` and `combat_health` fields (`DATA_MODEL.md`).
 - **Shields:** stackable one-hit absorbers (`POWERUPS.md`). A shield intercepts the next damaging/knockdown event *before* health. Shields carry to the fight as armor.
 - **Multiplier:** the score combo (`SCORING_SYSTEM.md`); many hazards' real cost is a multiplier hit, not an HP hit.
 

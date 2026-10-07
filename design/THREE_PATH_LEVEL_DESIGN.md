@@ -128,3 +128,24 @@ The three routes are not difficulty *modes* chosen in a menu — they're chosen 
 - A ruthless speed-precision gauntlet on the HIGH route for experts.
 
 No separate "easy version" is ever authored. The geometry *is* the difficulty curve, laid out in space rather than selected in a menu.
+
+## 11. "High-Route Clear" — definition
+
+Several systems reward a **high-route clear** (`PROGRESSION.md`, `FIGHTING_SYSTEM.md` loadout). Because routes weave and reconnect, "held the high route" needs a precise, measurable definition. We define it at **two granularities**:
+
+### Per-segment high clear
+A player earns a **segment high-clear** when, between one junction and the next, they spend **≥ ~85% of that segment's horizontal distance on the HIGH route** (tracked by `RouteManager` via route-tag volumes — `GODOT_ARCHITECTURE.md`). Brief, deliberate drops/climbs within a segment don't disqualify it; sustained time on MIDDLE/LOW does.
+
+- The ~85% threshold is a **tuning target** stored in `ScoreRuleData` (`DATA_MODEL.md`), not hard-coded.
+- A segment high-clear is the unit that grants the fight's **"bonus attack / EX option"** loadout bonus (one per high-cleared segment, capped — see `PROGRESSION.md`).
+
+### Full high-route clear
+A **full high-route clear** = **every segment** in the level earns a segment high-clear. This is the tracked feat `SaveData.records.full_high_clear` (`DATA_MODEL.md`) and the hardest expression of mastery (`REPLAYABILITY.md`).
+
+### Why distance, not time
+Distance (not elapsed time) is used so that going *faster* on HIGH never accidentally reduces your high-clear credit. You're measured on *where you went*, not how long it took.
+
+### Edge cases
+- **Junction rooms** are route-neutral and excluded from the percentage (they reconnect all routes by design).
+- **The major shortcut** (`PROOF_OF_CONCEPT_LEVEL.md`) counts as HIGH distance for the segment it skips, since taking it is a HIGH-route reward.
+- A **drop that you climb back from** within the segment can still leave you above the threshold — recovery is not punished beyond the distance you spent low.
